@@ -27,7 +27,7 @@
 >
 > This isn't some app you have to learn. We literally set it up for you  -  configured to your market, your voice, your workflow. $997, one time, done.
 >
-> If you want to see if it fits your business, drop a  in the comments or DM me.
+> If you want to see if it fits your business, drop a comment below or DM me.
 
 ---
 
@@ -42,7 +42,7 @@
 > - Following up with leads consistently
 > - All the transaction coordination emails and checklists
 >
-> We built Autopilot Agent to handle all three. Curious if that matches what you'd want off your plate. Drop yours below 
+> We built Autopilot Agent to handle all three. Curious if that matches what you'd want off your plate. Drop yours below.
 
 ---
 
@@ -68,5 +68,5 @@
 ## Response Handling
 
 - Every comment or DM gets a personal reply within 4 hours
-- "INFO" or  commenters get a DM with the landing page link + offer to do a 15-min walkthrough call
+- "INFO" commenters get a DM with the landing page link + offer to do a 15-min walkthrough call
 - Track every responder in the pipeline spreadsheet
