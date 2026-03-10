@@ -1,4 +1,4 @@
-# Autopilot Agent — Internal Setup Checklist
+# Autopilot Agent  -  Internal Setup Checklist
 
 *Use this checklist for every new $997 Autopilot Agent customer. Target: complete setup within 5 business days of intake form submission.*
 
@@ -9,7 +9,7 @@
 - [ ] Intake form received and reviewed
 - [ ] Customer record created in CRM/tracking sheet
 - [ ] Email 2 (Setup Kickoff) sent automatically
-- [ ] Flag any incomplete or unclear intake responses — follow up within 24 hours
+- [ ] Flag any incomplete or unclear intake responses  -  follow up within 24 hours
 - [ ] Assign internal setup owner for this customer
 
 ## Phase 2: Brand & Content Configuration (Day 1–3)
@@ -70,8 +70,8 @@
 
 ## Phase 7: Post-Launch Check-In (Day 7–14)
 
-- [ ] Day 7: Check — has first AI content been posted?
-- [ ] Day 7: Check — has at least one lead received automated follow-up?
+- [ ] Day 7: Check  -  has first AI content been posted?
+- [ ] Day 7: Check  -  has at least one lead received automated follow-up?
 - [ ] Day 10: Send check-in email ("How's everything running?")
 - [ ] Day 14: Review success metrics (see Success Criteria doc)
 - [ ] Flag any issues or customer concerns for immediate resolution
@@ -83,4 +83,4 @@
 
 - **SLA:** Intake form → Go-live in ≤5 business days
 - **Escalation:** If blocked on CRM access, missing info, or technical issues, escalate same-day
-- **Customer comms:** Keep the customer informed at every stage — silence breeds doubt
+- **Customer comms:** Keep the customer informed at every stage  -  silence breeds doubt

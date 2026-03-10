@@ -19,15 +19,15 @@
 
 Hi [Contact Name],
 
-My name is Kyle Vogt. I'm a California real estate professional and the founder of Autopilot Agent — a done-for-you AI setup service built specifically for real estate agents.
+My name is Kyle Vogt. I'm a California real estate professional and the founder of Autopilot Agent  -  a done-for-you AI setup service built specifically for real estate agents.
 
-I'd love to explore the possibility of presenting a workshop or class for SAR members on how AI can practically reduce admin time by 10+ hours per week. This wouldn't be a theoretical overview — I'd demonstrate live AI agents that handle content creation, lead follow-up, and transaction admin, configured for a real Sacramento agent's workflow.
+I'd love to explore the possibility of presenting a workshop or class for SAR members on how AI can practically reduce admin time by 10+ hours per week. This wouldn't be a theoretical overview  -  I'd demonstrate live AI agents that handle content creation, lead follow-up, and transaction admin, configured for a real Sacramento agent's workflow.
 
 A few format options that might work:
 
-1. **Tech Tuesday or Lunch & Learn** — 30-minute session + live demo
-2. **CE-eligible class** — If there's interest in a deeper dive, I can develop curriculum
-3. **Sponsorship** — Happy to discuss sponsoring an upcoming event where this fits naturally
+1. **Tech Tuesday or Lunch & Learn**  -  30-minute session + live demo
+2. **CE-eligible class**  -  If there's interest in a deeper dive, I can develop curriculum
+3. **Sponsorship**  -  Happy to discuss sponsoring an upcoming event where this fits naturally
 
 I believe this would be genuinely valuable for your members, especially independent agents managing high transaction volume without full-time staff.
 

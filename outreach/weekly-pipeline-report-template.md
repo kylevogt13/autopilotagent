@@ -1,4 +1,4 @@
-# Autopilot Agent — Weekly Pipeline Report
+# Autopilot Agent  -  Weekly Pipeline Report
 
 **Week of:** {{Date}}
 **Reported by:** Sales Development Rep
@@ -10,14 +10,14 @@
 
 | Metric | This Week | Total |
 |--------|-----------|-------|
-| New prospects identified | — | — |
-| Outreach emails sent | — | — |
-| Responses received | — | — |
-| Conversations started | — | — |
-| Demos/calls booked | — | — |
-| Setups sold ($997) | — | — |
-| Pipeline value (qualified) | — | — |
-| Revenue closed | — | — |
+| New prospects identified |  -  |  -  |
+| Outreach emails sent |  -  |  -  |
+| Responses received |  -  |  -  |
+| Conversations started |  -  |  -  |
+| Demos/calls booked |  -  |  -  |
+| Setups sold ($997) |  -  |  -  |
+| Pipeline value (qualified) |  -  |  -  |
+| Revenue closed |  -  |  -  |
 
 **Conversion funnel:** Prospects → Outreach → Responses → Conversations → Demos → Closed
 
@@ -27,13 +27,13 @@
 
 | Channel | Outreach | Responses | Conversations | Closed |
 |---------|----------|-----------|---------------|--------|
-| Direct email (cold) | — | — | — | — |
-| Lab Coat Agents (Tristan) | — | — | — | — |
-| SAR | — | — | — | — |
-| Kris Vogt Facebook | — | — | — | — |
-| Referrals | — | — | — | — |
-| Anne (Aloha Transactions) | — | — | — | — |
-| CJ (Reddog Real Estate) | — | — | — | — |
+| Direct email (cold) |  -  |  -  |  -  |  -  |
+| Lab Coat Agents (Tristan) |  -  |  -  |  -  |  -  |
+| SAR |  -  |  -  |  -  |  -  |
+| Kris Vogt Facebook |  -  |  -  |  -  |  -  |
+| Referrals |  -  |  -  |  -  |  -  |
+| Anne (Aloha Transactions) |  -  |  -  |  -  |  -  |
+| CJ (Reddog Real Estate) |  -  |  -  |  -  |  -  |
 
 ---
 
@@ -64,4 +64,4 @@
 **Target:** 10 paid setups by June 2026
 **Closed to date:** 0/10
 **Qualified pipeline:** 0 conversations
-**On track?** Just starting — building pipeline this week
+**On track?** Just starting  -  building pipeline this week

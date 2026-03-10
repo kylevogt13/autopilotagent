@@ -1,4 +1,4 @@
-# DocuSign ISV Integration Spec — EscrowEye
+# DocuSign ISV Integration Spec  -  EscrowEye
 
 > **Version:** 1.0
 > **Date:** 2026-03-08
@@ -13,14 +13,14 @@
 EscrowEye is a California real estate transaction SaaS. This spec defines the integration with DocuSign eSign REST API to handle electronic signing of California Association of Realtors (CAR) standard forms within the platform.
 
 **Key forms:**
-- **RPA** — Residential Purchase Agreement
-- **TDS** — Transfer Disclosure Statement
-- **SPQ** — Seller Property Questionnaire
-- **AVID** — Agent Visual Inspection Disclosure
+- **RPA**  -  Residential Purchase Agreement
+- **TDS**  -  Transfer Disclosure Statement
+- **SPQ**  -  Seller Property Questionnaire
+- **AVID**  -  Agent Visual Inspection Disclosure
 
 **Goals:**
 1. Automate envelope creation for CAR forms tied to EscrowEye transactions.
-2. Embedded signing — signers never leave the EscrowEye UI.
+2. Embedded signing  -  signers never leave the EscrowEye UI.
 3. Real-time status sync via webhooks.
 4. Audit trail stored locally for compliance.
 
@@ -31,15 +31,15 @@ EscrowEye is a California real estate transaction SaaS. This spec defines the in
 
 ---
 
-## 2. Authentication — OAuth 2.0 JWT Grant
+## 2. Authentication  -  OAuth 2.0 JWT Grant
 
 EscrowEye operates as a backend service (no interactive user login per request), so we use the JWT Grant flow. This is the standard for ISV/server-to-server integrations.
 
 ### 2.1 Prerequisites
 
 1. **DocuSign Developer Account** with an integration key (client ID) created at [DocuSign Admin Console](https://admindemo.docusign.com/).
-2. **RSA Keypair** — generate a 2048-bit RSA key. Upload the public key to the integration key settings. Store the private key securely (e.g., AWS Secrets Manager or Vault).
-3. **One-time Admin Consent** — the account admin must grant consent via this URL:
+2. **RSA Keypair**  -  generate a 2048-bit RSA key. Upload the public key to the integration key settings. Store the private key securely (e.g., AWS Secrets Manager or Vault).
+3. **One-time Admin Consent**  -  the account admin must grant consent via this URL:
 
 ```
 https://account-d.docusign.com/oauth/auth?
@@ -133,7 +133,7 @@ Authorization: Bearer {access_token}
 
 ```json
 {
-  "emailSubject": "EscrowEye — Please sign documents for 123 Main St, Los Angeles, CA",
+  "emailSubject": "EscrowEye  -  Please sign documents for 123 Main St, Los Angeles, CA",
   "emailBlurb": "Documents for escrow #ESC-2026-0042 are ready for your signature.",
   "status": "sent",
   "documents": [
@@ -280,7 +280,7 @@ Authorization: Bearer {access_token}
 | Decision | Rationale |
 |----------|-----------|
 | `clientUserId` on every signer | Enables embedded signing (signers are "captive recipients"). Without it, DocuSign sends email invites. |
-| `routingOrder: "1"` for both buyer/seller | Parallel signing — both parties sign simultaneously, reducing transaction time. |
+| `routingOrder: "1"` for both buyer/seller | Parallel signing  -  both parties sign simultaneously, reducing transaction time. |
 | `routingOrder: "2"` for carbon copies | Agents get notified after all signatures are collected. |
 | `status: "sent"` | Immediately activates the envelope. Use `"created"` for draft envelopes. |
 | Inline `eventNotification` | Per-envelope webhook config. Alternative: account-level Connect configuration. We use inline for granular control per transaction. |
@@ -292,11 +292,11 @@ Authorization: Bearer {access_token}
 | `signHereTabs` | Signature fields on each form |
 | `initialHereTabs` | Initial fields (TDS and SPQ acknowledgments) |
 | `dateSignedTabs` | Auto-populated date of signing |
-| `textTabs` | Pre-filled fields (names, addresses, escrow numbers) — `locked: true` for read-only |
+| `textTabs` | Pre-filled fields (names, addresses, escrow numbers)  -  `locked: true` for read-only |
 | `checkboxTabs` | Disclosure checkboxes on TDS/SPQ |
 | `radioGroupTabs` | Yes/No selections on disclosure forms |
 
-### 3.5 Tab Positioning — Anchor Strings (Recommended)
+### 3.5 Tab Positioning  -  Anchor Strings (Recommended)
 
 For CAR forms, use **anchor strings** instead of fixed x/y coordinates. Place invisible text markers in the PDF templates, and DocuSign positions tabs relative to them:
 
@@ -316,7 +316,7 @@ For CAR forms, use **anchor strings** instead of fixed x/y coordinates. Place in
 **Advantages over fixed coordinates:**
 - Survives minor PDF layout changes (page reflows, font size tweaks)
 - Easier to maintain across form revisions
-- Self-documenting — the anchor text describes what goes there
+- Self-documenting  -  the anchor text describes what goes there
 
 **Fallback:** Use fixed coordinates (`documentId` + `pageNumber` + `xPosition` + `yPosition`) when anchor strings are not feasible.
 
@@ -465,11 +465,11 @@ Instead of redirecting to the DocuSign URL, use the **docusign.js** library to r
 
 - The signing URL is single-use and expires after 5 minutes. Generate it on-demand when the user clicks "Sign Now."
 - `email`, `userName`, and `clientUserId` must **exactly match** the values from the `createEnvelope` call. A mismatch produces `UNKNOWN_ENVELOPE_RECIPIENT`.
-- After `signing_complete`, wait for the webhook confirmation before updating transaction status — the return URL event is client-side only.
+- After `signing_complete`, wait for the webhook confirmation before updating transaction status  -  the return URL event is client-side only.
 
 ---
 
-## 5. Webhook Handling — DocuSign Connect
+## 5. Webhook Handling  -  DocuSign Connect
 
 ### 5.1 Configuration
 
@@ -501,7 +501,7 @@ DocuSign sends XML by default. Request JSON with `"includeDocumentFields": "true
       "documentsUri": "/envelopes/d4f3a1b2-.../documents",
       "recipientsUri": "/envelopes/d4f3a1b2-.../recipients",
       "envelopeUri": "/envelopes/d4f3a1b2-...",
-      "emailSubject": "EscrowEye — Please sign documents for 123 Main St",
+      "emailSubject": "EscrowEye  -  Please sign documents for 123 Main St",
       "sentDateTime": "2026-03-08T12:00:00.000Z",
       "completedDateTime": "2026-03-08T14:30:00.000Z",
       "recipients": {
@@ -717,7 +717,7 @@ CREATE INDEX idx_webhook_events_unprocessed ON docusign_webhook_events(processed
 
 ---
 
-## 7. Implementation Plan — 18 Days
+## 7. Implementation Plan  -  18 Days
 
 ### Phase 1: Foundation (Days 1–6)
 
@@ -739,7 +739,7 @@ CREATE INDEX idx_webhook_events_unprocessed ON docusign_webhook_events(processed
 | 9 | Webhook endpoint: receive, HMAC verify, parse, store in `docusign_webhook_events` | `POST /webhooks/docusign` endpoint |
 | 10 | Webhook processor: update envelope/recipient status, idempotency checks | Event processing pipeline |
 | 11 | Completed envelope handling: download signed PDFs, store in document storage, update transaction | Document retrieval + storage |
-| 12 | Integration test: full flow — create envelope → sign (demo) → webhook → status update → PDF download | End-to-end flow verified in sandbox |
+| 12 | Integration test: full flow  -  create envelope → sign (demo) → webhook → status update → PDF download | End-to-end flow verified in sandbox |
 
 ### Phase 3: Hardening & Launch (Days 13–18)
 
@@ -772,13 +772,13 @@ CREATE INDEX idx_webhook_events_unprocessed ON docusign_webhook_events(processed
 
 ## 8. Security Considerations
 
-1. **RSA Private Key** — stored in secrets manager, never in source control, rotated annually.
-2. **HMAC Secret** — separate secret for webhook verification, also in secrets manager.
-3. **Access Tokens** — cached in-memory only, never persisted to disk or database.
-4. **Signed PDFs** — encrypted at rest in document storage; access logged.
-5. **PII in Logs** — redact signer emails and names from application logs; envelope IDs are safe to log.
-6. **Webhook Endpoint** — HMAC verification required; rate limit inbound requests; HTTPS only.
-7. **CSP Headers** — if using iframe for embedded signing, allowlist DocuSign domains in Content-Security-Policy frame-src.
+1. **RSA Private Key**  -  stored in secrets manager, never in source control, rotated annually.
+2. **HMAC Secret**  -  separate secret for webhook verification, also in secrets manager.
+3. **Access Tokens**  -  cached in-memory only, never persisted to disk or database.
+4. **Signed PDFs**  -  encrypted at rest in document storage; access logged.
+5. **PII in Logs**  -  redact signer emails and names from application logs; envelope IDs are safe to log.
+6. **Webhook Endpoint**  -  HMAC verification required; rate limit inbound requests; HTTPS only.
+7. **CSP Headers**  -  if using iframe for embedded signing, allowlist DocuSign domains in Content-Security-Policy frame-src.
 
 ---
 

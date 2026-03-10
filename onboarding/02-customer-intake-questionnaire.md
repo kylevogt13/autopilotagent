@@ -1,4 +1,4 @@
-# Autopilot Agent — Customer Intake Questionnaire
+# Autopilot Agent  -  Customer Intake Questionnaire
 
 *Complete this form so we can configure your AI team to match your brand, market, and style. Takes about 10 minutes.*
 
@@ -20,7 +20,7 @@
 9. **Property types you focus on:** (e.g., single-family, condos, luxury, investment, first-time buyers)
 10. **Price range you typically work in:** (e.g., $400K–$800K)
 11. **Do you focus more on buyers, sellers, or both?**
-12. **What makes your market unique?** (anything we should know — seasonal trends, new developments, etc.)
+12. **What makes your market unique?** (anything we should know  -  seasonal trends, new developments, etc.)
 
 ## Section 3: Your Brand & Voice
 
@@ -65,7 +65,7 @@
 
 ## Section 7: Goals & Expectations
 
-30. **What does success look like for you in 90 days?** (be specific — more listings, more leads contacted, less time on content, etc.)
+30. **What does success look like for you in 90 days?** (be specific  -  more listings, more leads contacted, less time on content, etc.)
 31. **How many transactions did you close in the last 12 months?**
 32. **How many would you like to close in the next 12 months?**
 33. **Anything else we should know to set you up for success?**

@@ -1,7 +1,7 @@
-# DocuSign ISV Integration — Technical Spec
+# DocuSign ISV Integration  -  Technical Spec
 
 **Company:** EscrowEye
-**Domain:** California real estate escrow — CAR form e-signatures
+**Domain:** California real estate escrow  -  CAR form e-signatures
 **Target:** Early March 2026
 **API:** DocuSign eSign REST API v2.1
 
@@ -28,10 +28,10 @@ EscrowEye sends envelopes via API, DocuSign delivers documents to signers, and C
 
 ### 2.1 OAuth Grant Type: JWT (JSON Web Token)
 
-JWT is the right choice for EscrowEye. Our integration operates server-to-server with a system account — no interactive user login required per transaction.
+JWT is the right choice for EscrowEye. Our integration operates server-to-server with a system account  -  no interactive user login required per transaction.
 
 **Why JWT over Authorization Code:**
-- Escrow workflows are automated — no user browser session available
+- Escrow workflows are automated  -  no user browser session available
 - Single service account sends all envelopes on behalf of the company
 - Unattended, long-running process needs token refresh without user interaction
 
@@ -70,7 +70,7 @@ JWT is the right choice for EscrowEye. Our integration operates server-to-server
 
 ### 2.4 Base URI Discovery
 
-DocuSign hosts across multiple regions. After obtaining a token, call `/oauth/userinfo` to get the correct `base_uri` for API calls. Cache this — it rarely changes. All subsequent API calls use:
+DocuSign hosts across multiple regions. After obtaining a token, call `/oauth/userinfo` to get the correct `base_uri` for API calls. Cache this  -  it rarely changes. All subsequent API calls use:
 
 ```
 {base_uri}/restapi/v2.1/accounts/{account_id}/...
@@ -108,9 +108,9 @@ Pre-create DocuSign templates for each CAR form type used in escrow transactions
 ### 3.2 Template Configuration
 
 Each template uses:
-- **Anchor tags** for tab placement — embed invisible text anchors in source PDFs (e.g., `//signer1_sign//`, `//signer1_date//`) so tabs auto-position regardless of document reformatting
-- **Role-based routing** — signers assigned by role name (`Buyer`, `Seller`, etc.), mapped at envelope creation time to actual recipients
-- **Merge fields** — property address, escrow number, transaction amount populated at send time via `textTabs` with `tabLabel` matching
+- **Anchor tags** for tab placement  -  embed invisible text anchors in source PDFs (e.g., `//signer1_sign//`, `//signer1_date//`) so tabs auto-position regardless of document reformatting
+- **Role-based routing**  -  signers assigned by role name (`Buyer`, `Seller`, etc.), mapped at envelope creation time to actual recipients
+- **Merge fields**  -  property address, escrow number, transaction amount populated at send time via `textTabs` with `tabLabel` matching
 
 ### 3.3 Template Management
 
@@ -166,12 +166,12 @@ Content-Type: application/json
     }
   ],
   "status": "sent",
-  "emailSubject": "EscrowEye — Documents for 123 Main St (ESC-2026-0042)",
+  "emailSubject": "EscrowEye  -  Documents for 123 Main St (ESC-2026-0042)",
   "emailBlurb": "Please review and sign the attached escrow documents."
 }
 ```
 
-**Response includes `envelopeId`** — store this for tracking.
+**Response includes `envelopeId`**  -  store this for tracking.
 
 ### 4.2 Composite Templates (Multiple Documents)
 
@@ -230,7 +230,7 @@ CREATE INDEX idx_envelopes_status ON docusign_envelopes(status);
 
 ---
 
-## 5. Webhook Handling — DocuSign Connect
+## 5. Webhook Handling  -  DocuSign Connect
 
 ### 5.1 Approach: Account-Level Connect Configuration
 
@@ -252,8 +252,8 @@ Set up via DocuSign Admin > Connect:
 | Include Documents | No (fetch on demand to reduce payload size) |
 | Include Certificate of Completion | No |
 | Require Acknowledgement | Yes (200 response within 100s) |
-| Retry | Enabled — DocuSign retries failed deliveries |
-| HMAC Security | Enabled — verify `X-DocuSign-Signature-1` header |
+| Retry | Enabled  -  DocuSign retries failed deliveries |
+| HMAC Security | Enabled  -  verify `X-DocuSign-Signature-1` header |
 
 ### 5.3 Webhook Endpoint
 
@@ -315,7 +315,7 @@ Key fields in the Connect JSON payload:
 | DocuSign Status | EscrowEye Action |
 |----------------|-----------------|
 | `sent` | Mark envelope as sent, notify escrow officer |
-| `delivered` | Log — signer has viewed the documents |
+| `delivered` | Log  -  signer has viewed the documents |
 | `completed` | Mark envelope complete, trigger document download, advance transaction workflow |
 | `declined` | Alert escrow officer, flag transaction for review |
 | `voided` | Mark envelope voided, log reason |
@@ -382,7 +382,7 @@ DocuSign ISV accounts have higher rate limits than standard accounts. Monitor `X
 
 ## 7. Implementation Plan
 
-### Phase 1 — Foundation (Days 1–3)
+### Phase 1  -  Foundation (Days 1–3)
 
 - [ ] Register DocuSign ISV developer account and sandbox
 - [ ] Create Integration Key (app) with JWT grant
@@ -391,7 +391,7 @@ DocuSign ISV accounts have higher rate limits than standard accounts. Monitor `X
 - [ ] Implement auth module: JWT assertion → token → base URI discovery
 - [ ] Write integration tests against sandbox
 
-### Phase 2 — Templates (Days 4–6)
+### Phase 2  -  Templates (Days 4–6)
 
 - [ ] Design anchor tag placement for top 3 CAR forms (RPA, TDS, Escrow Instructions)
 - [ ] Create source PDFs with embedded anchor tags
@@ -399,7 +399,7 @@ DocuSign ISV accounts have higher rate limits than standard accounts. Monitor `X
 - [ ] Store template IDs in config table
 - [ ] Build template mapping service: form type → template ID → recipient roles
 
-### Phase 3 — Envelope Creation (Days 7–9)
+### Phase 3  -  Envelope Creation (Days 7–9)
 
 - [ ] Implement envelope creation service (single template)
 - [ ] Implement composite template support (multi-document)
@@ -408,7 +408,7 @@ DocuSign ISV accounts have higher rate limits than standard accounts. Monitor `X
 - [ ] Create docusign_envelopes tracking table
 - [ ] Integration tests: send envelopes in sandbox, verify delivery
 
-### Phase 4 — Webhooks (Days 10–12)
+### Phase 4  -  Webhooks (Days 10–12)
 
 - [ ] Set up Connect configuration in DocuSign sandbox
 - [ ] Implement webhook endpoint with HMAC verification
@@ -418,7 +418,7 @@ DocuSign ISV accounts have higher rate limits than standard accounts. Monitor `X
 - [ ] Create webhook event log table
 - [ ] Test full lifecycle: send → sign → webhook → download
 
-### Phase 5 — Integration & Polish (Days 13–15)
+### Phase 5  -  Integration & Polish (Days 13–15)
 
 - [ ] Wire envelope sending into EscrowEye transaction workflow UI
 - [ ] Build escrow officer dashboard: envelope status per transaction
@@ -426,7 +426,7 @@ DocuSign ISV accounts have higher rate limits than standard accounts. Monitor `X
 - [ ] Error handling: retry logic, dead letter queue for failed webhooks
 - [ ] Rate limit handling with backoff
 
-### Phase 6 — Go-Live (Days 16–18)
+### Phase 6  -  Go-Live (Days 16–18)
 
 - [ ] DocuSign ISV review and production app approval
 - [ ] Production Connect configuration with HMAC keys
@@ -440,12 +440,12 @@ DocuSign ISV accounts have higher rate limits than standard accounts. Monitor `X
 
 ## 8. Security Considerations
 
-- **HMAC verification on all webhooks** — reject unsigned payloads
+- **HMAC verification on all webhooks**  -  reject unsigned payloads
 - **RSA private key** never in source control, only in secrets manager
 - **Access tokens** in memory only, never logged or persisted
-- **PII handling** — signer names/emails pass through DocuSign; minimize storage, encrypt at rest
-- **Audit trail** — log all envelope operations for compliance (California DRE requirements)
-- **IP allowlisting** — whitelist DocuSign Connect IP ranges for webhook endpoint (optional but recommended)
+- **PII handling**  -  signer names/emails pass through DocuSign; minimize storage, encrypt at rest
+- **Audit trail**  -  log all envelope operations for compliance (California DRE requirements)
+- **IP allowlisting**  -  whitelist DocuSign Connect IP ranges for webhook endpoint (optional but recommended)
 
 ---
 

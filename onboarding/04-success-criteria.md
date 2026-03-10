@@ -1,4 +1,4 @@
-# Autopilot Agent — Success Criteria
+# Autopilot Agent  -  Success Criteria
 
 *Defines what "successful setup" looks like for each $997 Autopilot Agent customer.*
 
@@ -35,7 +35,7 @@ A setup is successful when ALL of the following are true:
 |--------|--------|----------------|
 | Content consistency | ≥3 AI-generated posts per week | Demonstrates ongoing value |
 | Lead response time | <5 min automated first response | Key differentiator for the agent |
-| Time saved (self-reported) | ≥5 hours/week | Core value prop — "get your time back" |
+| Time saved (self-reported) | ≥5 hours/week | Core value prop  -  "get your time back" |
 | Customer satisfaction | Would recommend (NPS ≥8) | Retention and referral signal |
 | No churn | Customer still active at day 30 | Baseline retention metric |
 
@@ -56,12 +56,12 @@ A setup is successful when ALL of the following are true:
 
 Act immediately if any of these appear:
 
-- **No intake form submitted within 72 hours** — Call the customer directly
-- **No dashboard login within 7 days of go-live** — Send personal check-in + offer a second walkthrough
-- **Support request unanswered >24 hours** — Escalate internally
-- **Customer requests refund or expresses doubt** — Escalate to Kyle immediately
-- **No content posted after 7 days** — Investigate technical issues + contact customer
-- **Customer goes silent after go-live** — Day 10 check-in call (not just email)
+- **No intake form submitted within 72 hours**  -  Call the customer directly
+- **No dashboard login within 7 days of go-live**  -  Send personal check-in + offer a second walkthrough
+- **Support request unanswered >24 hours**  -  Escalate internally
+- **Customer requests refund or expresses doubt**  -  Escalate to Kyle immediately
+- **No content posted after 7 days**  -  Investigate technical issues + contact customer
+- **Customer goes silent after go-live**  -  Day 10 check-in call (not just email)
 
 ---
 

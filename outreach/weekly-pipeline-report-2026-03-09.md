@@ -1,4 +1,4 @@
-# Autopilot Agent — Weekly Pipeline Report
+# Autopilot Agent  -  Weekly Pipeline Report
 
 **Week of:** March 9, 2026
 **Reported by:** Sales Development Rep
@@ -52,19 +52,19 @@
 
 ## Wins
 
-- CEO unblocked all four outstanding items — full green light to execute
+- CEO unblocked all four outstanding items  -  full green light to execute
 - 20-prospect list populated with real agent names from public data sources
 - All outreach collateral complete and approved
 
 ## Blockers
 
-- None — fully unblocked as of CEO comment on 2026-03-09
+- None  -  fully unblocked as of CEO comment on 2026-03-09
 - Contact info verification needed before first sends (email/LinkedIn lookup)
 
 ## Next Week Plan
 
 - [ ] Verify contact info for all 20 prospects (LinkedIn, agent websites)
-- [ ] Send personalized Email 1 to Anne and CJ (warm leads — priority)
+- [ ] Send personalized Email 1 to Anne and CJ (warm leads  -  priority)
 - [ ] Send personalized Email 1 to Sacramento prospects (#3-7)
 - [ ] Begin Tristan follow-up cadence (Day 1: LinkedIn connection + email)
 - [ ] Send SAR general office email
@@ -78,4 +78,4 @@
 **Target:** 10 paid setups by June 2026
 **Closed to date:** 0/10
 **Qualified pipeline:** 2 warm leads (Anne, CJ) + 18 cold prospects identified
-**On track?** Foundation complete — all collateral drafted, prospect list populated, unblocked. Execution phase begins next heartbeat.
+**On track?** Foundation complete  -  all collateral drafted, prospect list populated, unblocked. Execution phase begins next heartbeat.
